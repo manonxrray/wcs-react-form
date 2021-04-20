@@ -5,7 +5,7 @@ import { CardRow, Container, Footer, Header } from "./styles/elements";
 import Wilder from "./Wilder";
 import AddWilder from "./AddWilder";
 
-function App() {
+const App = () => {
   const [wilders, setWilders] = useState([]);
 
   useEffect(() => {
@@ -34,8 +34,8 @@ function App() {
       <Container>
         <h2>Wilders</h2>
         <CardRow>
-          {wilders.map((wilder) => (
-            <Wilder key={wilder._id} {...wilder} />
+          {wilders.map((wilder, i) => (
+            <Wilder key={i} {...wilder} />
           ))}
         </CardRow>
       </Container>

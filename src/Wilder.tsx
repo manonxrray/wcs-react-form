@@ -1,12 +1,18 @@
 import React from "react";
-import blank_profile from "./blank-profile-picture-female.png";
-import Skill from "./Skill";
+import Skill, { SkillProps } from "./Skill";
 import { Card, List } from "./styles/elements";
 
-function Wilder({ city, name, skills }) {
+type WilderProps = {
+  city: string
+  justAdded: boolean
+  name:string
+  skills: SkillProps[]
+}
+
+const Wilder = ({ city, name, justAdded, skills }:WilderProps) => {
   return (
     <Card>
-      <img src={blank_profile} alt={`${name} Profile`} />
+      <img src="./blank-profile-picture-female.png" alt={`${name} Profile`} />
       <h3>{name}</h3>
       <h4>City</h4>
       <p>{city}</p>

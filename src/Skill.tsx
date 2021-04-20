@@ -1,8 +1,14 @@
 import React from "react";
-import Proptypes from "prop-types";
+
 import { Badge } from "./styles/elements";
 
-function Skill({ title, votes }) {
+export type SkillProps = {
+  _id: string
+  title: string
+  votes: number
+}
+
+const Skill = ({ title, votes }:SkillProps) => {
   return (
     <li>
       {title}
@@ -10,10 +16,5 @@ function Skill({ title, votes }) {
     </li>
   );
 }
-
-Skill.propTypes = {
-  title: Proptypes.string.isRequired,
-  votes: Proptypes.number.isRequired,
-};
 
 export default Skill;

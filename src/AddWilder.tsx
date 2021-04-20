@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Button, Error, Form, Input, Label } from "./styles/form-elements";
 
-function AddWilder() {
+const AddWilder = () => {
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
   const [error, setError] = useState("");
   return (
     <Form
-      onSubmit={async (e) => {
+      onSubmit={async (e: any) => {
         e.preventDefault();
         try {
           const result = await axios.post(
@@ -37,7 +37,7 @@ function AddWilder() {
         type="text"
         placeholder="Type the name"
         value={name}
-        onChange={(e) => setName(e.target.value)}
+        onChange={(e: any) => setName(e.target.value)}
       />
       <Label htmlFor="city-input">City :</Label>
       <Input
@@ -45,7 +45,7 @@ function AddWilder() {
         type="text"
         placeholder="Type the city"
         value={city}
-        onChange={(e) => setCity(e.target.value)}
+        onChange={(e: any) => setCity(e.target.value)}
       />
       {error !== "" && <Error>{error}</Error>}
       <Button>Add</Button>
